@@ -25,6 +25,7 @@ void meshSetup(){
 
 void receivedCallback( uint32_t from, String &msg ) {
   Serial.printf("bridge: Received from %u msg=%s\n", from, msg.c_str());
+  ws.textAll("Mesh Node : " + String(from) + " : " + msg);
 }
 
 

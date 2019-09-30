@@ -120,10 +120,13 @@ void onEvent(AsyncWebSocket * server, AsyncWebSocketClient * client, AwsEventTyp
       }
       Serial.printf("%s\n",msg.c_str());
 
-      if(info->opcode == WS_TEXT)
-        client->text("I got your text message" + msg);
-      else
+      if(info->opcode == WS_TEXT){
+        client->text("I got your text message : " + msg);
+        mesh.sendBroadcast(msg);
+      }
+      else{
         client->binary("I got your binary message");
+      }
     } else {
       //message is comprised of multiple frames or the frame is split into multiple packets
       if(info->index == 0){
@@ -151,11 +154,13 @@ void onEvent(AsyncWebSocket * server, AsyncWebSocketClient * client, AwsEventTyp
         Serial.printf("ws[%s][%u] frame[%u] end[%llu]\n", server->url(), client->id(), info->num, info->len);
         if(info->final){
           Serial.printf("ws[%s][%u] %s-message end\n", server->url(), client->id(), (info->message_opcode == WS_TEXT)?"text":"binary");
-          if(info->message_opcode == WS_TEXT)
-            client->text("I got your text message" + msg);
-            
-          else
+          if(info->message_opcode == WS_TEXT){
+            client->text("I got your text message : " + msg);
+            mesh.sendBroadcast(msg);
+          }
+          else{
             client->binary("I got your binary message" + msg);
+          }
         }
       }
     }

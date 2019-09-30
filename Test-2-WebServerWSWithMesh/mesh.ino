@@ -1,5 +1,5 @@
-void meshSetup(){
-    mesh.setDebugMsgTypes( ERROR | STARTUP | CONNECTION );  // set before init() so that you can see startup messages
+void meshSetup() {
+  mesh.setDebugMsgTypes( ERROR | STARTUP | CONNECTION );  // set before init() so that you can see startup messages
 
 
   // Channel set to 6. Make sure to use the same channel for your mesh and for you other
@@ -24,7 +24,9 @@ void meshSetup(){
 
 
 void receivedCallback( uint32_t from, String &msg ) {
-  Serial.printf("bridge: Received from %u msg=%s\n", from, msg.c_str());
+  Serial.printf("Mesh: Received from %u msg=%s\n", from, msg.c_str());
+  // Advertise connected clients what's going on
+  ws.textAll("mesh " + String(from) + " : " + msg);
 }
 
 
