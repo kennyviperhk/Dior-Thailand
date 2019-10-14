@@ -19,7 +19,7 @@ void receivedCallback( uint32_t from, String &msg );
 
 // User stub
 void sendMessage() ; // Prototype so PlatformIO doesn't complain
-
+/*
 Task taskSendMessage( TASK_SECOND * 1 , TASK_FOREVER, &sendMessage );
 
 void sendMessage() {
@@ -28,7 +28,7 @@ void sendMessage() {
   mesh.sendBroadcast( msg + " MeshID : " +MESH_ID + " : " + lastMsg);
   taskSendMessage.setInterval( random( TASK_SECOND * 1, TASK_SECOND * 5 ));
 }
-
+*/
 void setup() {
   Serial.begin(115200);
 
@@ -41,8 +41,12 @@ void setup() {
   mesh.onChangedConnections(&changedConnectionCallback);
   mesh.onNodeTimeAdjusted(&nodeTimeAdjustedCallback);
 
-  userScheduler.addTask( taskSendMessage );
-  taskSendMessage.enable();
+ // userScheduler.addTask( taskSendMessage );
+ // taskSendMessage.enable();
+
+  pinMode(LED_BUILTIN, OUTPUT); 
+  pinMode(D7, OUTPUT);
+  pinMode(D8, OUTPUT);
 }
 
 void loop() {

@@ -25,6 +25,13 @@ void meshSetup(){
 
 void receivedCallback( uint32_t from, String &msg ) {
   Serial.printf("bridge: Received from %u msg=%s\n", from, msg.c_str());
+    if (msg == "on") {
+
+     // mesh.sendBroadcast("n : " + mesh.getNodeId());
+  } else if (msg == "off") {
+
+    //  mesh.sendBroadcast("f : " + mesh.getNodeId());
+  }
   ws.textAll("Mesh Node : " + String(from) + " : " + msg);
 }
 
