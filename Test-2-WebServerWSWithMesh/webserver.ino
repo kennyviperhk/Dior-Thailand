@@ -17,10 +17,11 @@ void serverSetup() {
   server.on("/upload", HTTP_POST, [](AsyncWebServerRequest * request) {
     request->send(200);
   }, onUpload);
-
+  
   // send a file when /index is requested
   server.on("/index", HTTP_ANY, [](AsyncWebServerRequest * request) {
-    request->send(SPIFFS, "/index.htm");
+  request->send(200, "text/html", htmlText);
+    //request->send(SPIFFS, "/index.htm");
   });
 
   // HTTP basic authentication

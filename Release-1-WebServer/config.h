@@ -3,8 +3,11 @@
 //#define   STATION_SSID     "KakaLeung_Home"
 //#define   STATION_PASSWORD "27823034"
 
-#define   STATION_SSID     "IOIOn Air"
-#define   STATION_PASSWORD "SmartSpaceRm29!"
+//#define   STATION_SSID     "IOIOn Air"
+//#define   STATION_PASSWORD "SmartSpaceRm29!"
+
+#define   STATION_SSID     "backstage-server"
+#define   STATION_PASSWORD "server-backstage-dior"
 
 #define HOSTNAME "HTTP_BRIDGE"
 
