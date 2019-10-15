@@ -1,16 +1,16 @@
 # Dior-Thailand
 
-#Ref:
+## Ref:
 https://github.com/me-no-dev/ESPAsyncWebServer#async-websocket-event
 
-#dependecies
+## dependecies (found in Arduino Libaray Manager)
 - painlessMesh
 - ArduinoJson
 - TaskScheduler
 - [ESPAsyncTCP (ESP8266)](https://github.com/me-no-dev/ESPAsyncTCP)
 
 
-#Install the ESP8266 Board Package
+## Install the ESP8266 Board Package
 - Enter http://arduino.esp8266.com/stable/package_esp8266com_index.json into Additional Board Manager URLs field in the Arduino v1.6.4+ preferences.
 
 ![Board Manager](https://cdn-learn.adafruit.com/assets/assets/000/026/652/large1024/adafruit_products_Screen_Shot_2015-07-23_at_12.15.52_PM.png?1437668186)
