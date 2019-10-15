@@ -7,8 +7,8 @@ https://github.com/me-no-dev/ESPAsyncWebServer#async-websocket-event
 - painlessMesh
 - ArduinoJson
 - TaskScheduler
-- ESPAsyncTCP (ESP8266)
-- AsyncTCP (ESP32)
+- [ESPAsyncTCP (ESP8266)](https://github.com/me-no-dev/ESPAsyncTCP)
+
 
 #Install the ESP8266 Board Package
 - Enter http://arduino.esp8266.com/stable/package_esp8266com_index.json into Additional Board Manager URLs field in the Arduino v1.6.4+ preferences.
